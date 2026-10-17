@@ -100,17 +100,19 @@ a{color:inherit;text-decoration:none}
 .btn:hover{background:var(--ink)}
 .intro .phone{border-bottom:1px solid currentColor}
 
-/* pair */
-.pair{padding-bottom:clamp(90px,11vw,160px);align-items:start}
-.pair .a{grid-column:1/3;aspect-ratio:4/5;overflow:hidden}
-.pair .b{grid-column:3/5;margin-top:28%}
-.pair .b .ph{aspect-ratio:4/3;overflow:hidden}
-.pair img{width:100%;height:100%;object-fit:cover}
-.pair figcaption{font:400 12px var(--mono);color:var(--soft);margin-top:10px;text-transform:uppercase}
-.fade{opacity:1}
-.js .fade{opacity:0;transition:opacity 1s ease}
-.js .fade.in{opacity:1}
-
+/* split + visit */
+.split{padding-bottom:clamp(100px,12vw,170px)}
+.split .pic{grid-column:1/2;aspect-ratio:3/4;overflow:hidden;align-self:start}
+.split .txt{grid-column:3/5;align-self:end;max-width:52ch}
+.split h2,.visit h2{font:500 var(--s2)/1.08 var(--sans);letter-spacing:-.025em;margin:16px 0 22px}
+.split .txt p:not(.lab),.visit .txt p:not(.lab){line-height:1.5;margin-bottom:14px}
+.split .txt p:last-child{color:var(--sun)}
+.split img,.visit img{width:100%;height:100%;object-fit:cover}
+.visit{padding:clamp(90px,11vw,150px) 0}
+.visit .txt{grid-column:2/3;align-self:start}
+.visit .soft{color:var(--soft)}
+.visit .dir{border-bottom:1px solid var(--sun);color:var(--sun)}
+.visit .pic{grid-column:3/5;aspect-ratio:16/10;overflow:hidden;margin-top:12%}
 /* services */
 .svc{padding-bottom:clamp(80px,10vw,140px)}
 .svc .head{padding-bottom:var(--m)}
@@ -207,7 +209,7 @@ footer .base{display:flex;justify-content:space-between;gap:16px;padding:14px va
   .mark .word{font-size:11.4vw}
   .mark .tag{text-align:left;margin:0}
   .intro .lab,.svc .head .lab,.about .lab,.words .lab,.faq .head .lab,.contact .lab,.band .lab{margin-bottom:14px}
-  .pair .b{margin-top:var(--m)}
+  .split .pic{max-width:380px}.split .txt,.visit .pic{margin-top:34px}
   .service .n{margin-bottom:8px}.service .d{margin-top:14px}
   .hover-image{display:none}
   .about .pic{max-width:420px}.about .txt{margin-top:34px}
@@ -257,9 +259,17 @@ footer .base{display:flex;justify-content:space-between;gap:16px;padding:14px va
   </div>
 </section>
 
-<section class="pair g">
-  <figure class="a fade"><img src="assets/img/monstera.webp" alt="Deep green monstera leaves in low light"></figure>
-  <figure class="b fade"><div class="ph"><img src="assets/img/map.webp" alt="A road map of Colorado centered on Denver"></div><figcaption>1325 S. Colorado Blvd, Denver</figcaption></figure>
+<section class="split">
+  <div class="g">
+    <figure class="pic fade"><img src="assets/img/monstera.webp" alt="Deep green monstera leaves in low light"></figure>
+    <div class="txt">
+      <p class="lab">How sessions work</p>
+      <h2>Built for the hour after an eight-hour school day</h2>
+      <p>The last place most teenagers want to be after school is a therapist's office. Will knows that, so each session is built to be worth showing up for, with a real reason to come back next week.</p>
+      <p>What a teen says stays confidential. When something at home needs attention, Will brings parents in through coaching calls or family sessions, so nobody feels blindsided.</p>
+      <p>The goal is a middle path that works for the teen and the family.</p>
+    </div>
+  </div>
 </section>
 
 <section class="svc" id="services">
@@ -325,6 +335,19 @@ footer .base{display:flex;justify-content:space-between;gap:16px;padding:14px va
     <div class="q3"><p>&ldquo;I came in because my mom made me. I kept coming because it was the one hour a week nobody was grading me.&rdquo;</p><p class="who">Client, 17 &middot; Example</p></div>
     <div class="q3"><p>&ldquo;He didn&rsquo;t tell us much about sessions, which we hated at first. Then our son started talking to us again at dinner.&rdquo;</p><p class="who">Parent of a 15-year-old &middot; Example</p></div>
     <div class="q3"><p>&ldquo;I&rsquo;m 22 and almost a year sober. It started in that office.&rdquo;</p><p class="who">Client, 22 &middot; Example</p></div>
+  </div>
+</section>
+
+<section class="visit">
+  <div class="g">
+    <div class="txt">
+      <p class="lab">The office</p>
+      <h2>Off Colorado Blvd and I-25</h2>
+      <p>1325 S. Colorado Blvd, Suite B108<br>Denver, CO 80222</p>
+      <p class="soft">Sessions start in person here. Virtual sessions are an option when getting to the office isn't possible.</p>
+      <p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=1325+S+Colorado+Blvd+Suite+B108+Denver+CO+80222" target="_blank" rel="noopener">Get directions</a></p>
+    </div>
+    <figure class="pic fade"><img src="assets/img/map.webp" alt="A road map of Colorado centered on Denver"></figure>
   </div>
 </section>
 
