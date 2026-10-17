@@ -102,17 +102,20 @@ a{color:inherit;text-decoration:none}
 
 /* split + visit */
 .split{padding-bottom:clamp(100px,12vw,170px)}
-.split .pic{grid-column:1/2;aspect-ratio:3/4;overflow:hidden;align-self:start}
-.split .txt{grid-column:3/5;align-self:end;max-width:52ch}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--m)}
+.two{display:grid;grid-template-columns:5fr 6fr;column-gap:clamp(40px,6vw,104px);align-items:center}
+.split .pic{aspect-ratio:4/5;overflow:hidden}
+.split .txt{max-width:52ch}
 .split h2,.visit h2{font:500 var(--s2)/1.08 var(--sans);letter-spacing:-.025em;margin:16px 0 22px}
 .split .txt p:not(.lab),.visit .txt p:not(.lab){line-height:1.5;margin-bottom:14px}
 .split .txt p:last-child{color:var(--sun)}
 .split img,.visit img{width:100%;height:100%;object-fit:cover}
 .visit{padding:clamp(90px,11vw,150px) 0}
-.visit .txt{grid-column:2/3;align-self:start}
+.visit .two{grid-template-columns:5fr 7fr}
+.visit .txt{max-width:44ch}
 .visit .soft{color:var(--soft)}
 .visit .dir{border-bottom:1px solid var(--sun);color:var(--sun)}
-.visit .pic{grid-column:3/5;aspect-ratio:16/10;overflow:hidden;margin-top:12%}
+.visit .pic{aspect-ratio:4/3;overflow:hidden}
 /* services */
 .svc{padding-bottom:clamp(80px,10vw,140px)}
 .svc .head{padding-bottom:var(--m)}
@@ -133,10 +136,11 @@ a{color:inherit;text-decoration:none}
 
 /* about (light section) */
 .about{background:var(--cream);color:var(--green);padding:clamp(100px,12vw,170px) 0}
-.about .lab{grid-column:1;color:rgba(17,32,26,.6)}
-.about .pic{grid-column:2;aspect-ratio:4/5;overflow:hidden}
+.about .lab{color:rgba(17,32,26,.6);margin-bottom:18px}
+.about .two{align-items:start}
+.about .pic{aspect-ratio:4/5;overflow:hidden;position:sticky;top:110px}
 .about .pic img{width:100%;height:100%;object-fit:cover;object-position:35% 50%}
-.about .txt{grid-column:3/5;max-width:56ch}
+.about .txt{max-width:58ch}
 .about h2{font:500 var(--s2)/1.08 var(--sans);letter-spacing:-.025em;margin-bottom:24px}
 .about .txt p{line-height:1.5;margin-bottom:16px}
 .about .creds{font:400 12px/1.7 var(--mono);text-transform:uppercase;color:rgba(17,32,26,.6);border-top:1px solid rgba(17,32,26,.2);padding-top:14px;margin-top:24px}
@@ -160,17 +164,18 @@ a{color:inherit;text-decoration:none}
 
 /* faq */
 .faq{background:var(--bg2);padding:clamp(90px,11vw,150px) 0 clamp(60px,7vw,100px)}
-.faq .head .lab{grid-column:1}
-.faq .head h2{grid-column:2/4;font:500 var(--s2)/1.08 var(--sans);letter-spacing:-.025em;margin-bottom:var(--m)}
+.faq .wrap{max-width:980px}
+.faq .lab{margin-bottom:16px}
+.faq h2{font:500 var(--s2)/1.08 var(--sans);letter-spacing:-.025em;margin-bottom:clamp(28px,3vw,44px)}
 details{border-top:1px solid var(--line)}
 details:last-of-type{border-bottom:1px solid var(--line)}
-summary{list-style:none;cursor:pointer;padding:var(--m);display:grid;grid-template-columns:repeat(4,1fr);column-gap:var(--m)}
+summary{list-style:none;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:24px}
 summary::-webkit-details-marker{display:none}
-summary span{grid-column:2/4;font:500 clamp(20px,1.7vw,26px)/1.2 var(--sans);letter-spacing:-.015em}
-summary i{grid-column:4;justify-self:end;font:400 22px var(--mono);font-style:normal;color:var(--sun);transition:transform .4s var(--ease)}
+summary span{font:500 clamp(20px,1.7vw,26px)/1.2 var(--sans);letter-spacing:-.015em}
+summary i{flex:none;font:400 22px var(--mono);font-style:normal;color:var(--sun);transition:transform .4s var(--ease)}
 details[open] summary i{transform:rotate(45deg)}
-details .a{display:grid;grid-template-columns:repeat(4,1fr);column-gap:var(--m);padding:0 var(--m) calc(var(--m)*1.4)}
-details .a p{grid-column:2/4;color:var(--soft);max-width:56ch;line-height:1.5}
+details .a{padding:0 0 30px}
+details .a p{color:var(--soft);max-width:56ch;line-height:1.5}
 
 /* contact */
 .contact{padding:clamp(90px,11vw,150px) 0 clamp(100px,11vw,160px)}
@@ -208,14 +213,13 @@ footer .base{display:flex;justify-content:space-between;gap:16px;padding:14px va
   .mark{flex-direction:column-reverse;gap:10px}
   .mark .word{font-size:11.4vw}
   .mark .tag{text-align:left;margin:0}
-  .intro .lab,.svc .head .lab,.about .lab,.words .lab,.faq .head .lab,.contact .lab,.band .lab{margin-bottom:14px}
-  .split .pic{max-width:380px}.split .txt,.visit .pic{margin-top:34px}
+  .intro .lab,.svc .head .lab,.words .lab,.contact .lab,.band .lab{margin-bottom:14px}
+  .two,.visit .two{grid-template-columns:1fr}
+  .split .pic{max-width:420px}.split .txt,.visit .pic{margin-top:34px}
   .service .n{margin-bottom:8px}.service .d{margin-top:14px}
   .hover-image{display:none}
-  .about .pic{max-width:420px}.about .txt{margin-top:34px}
+  .about .pic{max-width:420px;position:static}.about .txt{margin-top:34px}
   .q3{margin-bottom:28px}
-  summary,details .a{grid-template-columns:1fr auto}
-  summary span,details .a p{grid-column:1}summary i{grid-column:2}
   form.f{grid-template-columns:1fr}
   footer .c{margin-bottom:24px}
   footer .big{font-size:11.4vw}
@@ -260,7 +264,7 @@ footer .base{display:flex;justify-content:space-between;gap:16px;padding:14px va
 </section>
 
 <section class="split">
-  <div class="g">
+  <div class="wrap two">
     <figure class="pic fade"><img src="assets/img/monstera.webp" alt="Deep green monstera leaves in low light"></figure>
     <div class="txt">
       <p class="lab">How sessions work</p>
@@ -307,10 +311,10 @@ footer .base{display:flex;justify-content:space-between;gap:16px;padding:14px va
 </div>
 
 <section class="about" id="about">
-  <div class="g">
-    <p class="lab">About</p>
+  <div class="wrap two">
     <div class="pic fade"><img src="assets/img/william-flug.webp" alt="Will Flug smiling in a leather armchair in his office, with a tall plant behind him"></div>
     <div class="txt">
+      <p class="lab">About</p>
       <h2>Hi, I'm Will.</h2>
       <p>I grew up in the social media era, so I know the world teens and young adults are living in right now. That lets me take my clients' experiences seriously without excusing the patterns that aren't helping them. Holding both is a big part of the work.</p>
       <p>I started in mental health in 2018, working in substance use recovery while I finished my psychology degree. After a year as a social worker for the state, supporting people with high-risk mental health needs, I earned my Master of Social Work at the University of Denver. I've worked with adolescents, young adults, and parents since 2023.</p>
@@ -339,7 +343,7 @@ footer .base{display:flex;justify-content:space-between;gap:16px;padding:14px va
 </section>
 
 <section class="visit">
-  <div class="g">
+  <div class="wrap two">
     <div class="txt">
       <p class="lab">The office</p>
       <h2>Off Colorado Blvd and I-25</h2>
@@ -351,14 +355,14 @@ footer .base{display:flex;justify-content:space-between;gap:16px;padding:14px va
   </div>
 </section>
 
-<section class="faq" id="faq">
-  <div class="g head"><p class="lab">FAQ</p><h2>The practical stuff</h2></div>
+<section class="faq" id="faq"><div class="wrap">
+  <p class="lab">FAQ</p><h2>The practical stuff</h2>
   <details open><summary><span>Where are you located?</span><i>+</i></summary><div class="a"><p>1325 S. Colorado Blvd, Suite B108, Denver 80222, right off Colorado Blvd and I-25.</p></div></details>
   <details><summary><span>What does it cost?</span><i>+</i></summary><div class="a"><p>Individual sessions are $150 and family sessions are $175. The substance use group is $300 a month. HSA and FSA cards are welcome.</p></div></details>
   <details><summary><span>Do you take insurance?</span><i>+</i></summary><div class="a"><p>No. Denver Forward Therapy doesn't accept insurance or Medicaid.</p></div></details>
   <details><summary><span>Can sessions be virtual?</span><i>+</i></summary><div class="a"><p>Sessions are in person by default. Virtual works when getting to the office isn't possible, like transportation trouble or being sick, and for clients who leave for school.</p></div></details>
   <details><summary><span>How do I get started?</span><i>+</i></summary><div class="a"><p>Book a free 15-minute call. If you decide to move forward, your intake session is free if you decide within 48 hours that you don't want to continue. No pressure either way.</p></div></details>
-</section>
+</div></section>
 
 <section class="contact" id="contact">
   <div class="g">
