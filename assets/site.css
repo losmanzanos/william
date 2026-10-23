@@ -35,7 +35,8 @@ a{color:inherit;text-decoration:none}
 .top.light .ct:hover{background:#34503F}
 .top nav a[aria-current] {background-size:100% 1px}
 .drop{position:relative}
-.drop>a::after{content:"";display:inline-block;width:5px;height:5px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;transform:translateY(-3px) rotate(45deg);margin-left:8px}
+.drop>button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:default;letter-spacing:inherit}
+.drop>button::after{content:"";display:inline-block;width:5px;height:5px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;transform:translateY(-3px) rotate(45deg);margin-left:8px}
 .drop ul{list-style:none;position:absolute;top:calc(100% + 14px);left:-18px;min-width:270px;background:#fff;color:var(--ink);border:1px solid var(--line);padding:8px 0;display:none}
 .drop ul::before{content:"";position:absolute;left:0;right:0;top:-18px;height:18px}
 .drop:hover ul,.drop:focus-within ul,.drop.open ul{display:block}
@@ -179,8 +180,8 @@ footer .base{display:flex;justify-content:space-between;gap:16px;padding:14px va
   .top nav{grid-row:2}
   .top.open{background:#fff;color:var(--ink);border-color:var(--line)}
   .top.open nav{display:flex;flex-direction:column;align-items:stretch;gap:0;padding-top:14px}
-  .top.open nav>a,.top.open .drop>a{display:block;padding:13px 0;border-bottom:1px solid var(--line);text-align:left;width:100%;font-size:18px}
-  .top.open .drop>a::after{display:none}
+  .top.open nav>a,.top.open .drop>button{display:block;padding:13px 0;border-bottom:1px solid var(--line);text-align:left;width:100%;font-size:18px}
+  .top.open .drop>button::after{display:none}
   .top.open .drop ul{display:block;position:static;border:0;padding:0 0 6px 14px;min-width:0}
   .top.open .drop ul::before{display:none}
   .top.open .drop li a{padding:9px 0}
