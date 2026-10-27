@@ -202,4 +202,8 @@ footer .base{display:flex;justify-content:space-between;gap:16px;padding:14px va
   footer .c{margin-bottom:26px}
   footer .big{font-size:10.2vw}
 }
-@media (min-width:901px){.top nav .mct{display:none}}
+@media (min-width:901px){.top nav .mct{display:none}
+  .top{display:flex;align-items:center;gap:0}
+  .top nav{margin-left:clamp(28px,3vw,48px)}
+  .top .ct{margin-left:auto}
+  .menu-btn{display:none}}
