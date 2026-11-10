@@ -180,6 +180,8 @@ form.f{grid-column:2/5;display:grid;grid-template-columns:repeat(3,1fr);gap:28px
 .sent{grid-column:2/5;max-width:56ch;padding-top:6px}
 .sent h2{font:400 var(--s2)/1.1 var(--serif);letter-spacing:-.02em;margin-bottom:16px}
 .sent p{line-height:1.5;font-weight:400}
+.sent p+p{margin-top:14px}
+.sent:focus{outline:none}
 
 /* footer */
 footer{overflow:hidden;background:var(--green);color:#E6EBE6;font-size:15px;padding:60px 0 0}

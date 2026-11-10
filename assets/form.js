@@ -16,7 +16,7 @@
     var data={who:f.who.value,age:f.age.value,interest:interest,name:f.elements.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim()||'Not given',message:f.message.value.trim()||'(No message)'};
     emailjs.send(CFG.serviceId,CFG.notifyTemplate,data).then(function(){
       if(CFG.autoReplyTemplate&&!/^EMAILJS_/.test(CFG.autoReplyTemplate)) emailjs.send(CFG.serviceId,CFG.autoReplyTemplate,data).catch(function(){});
-      f.hidden=true;sent.hidden=false;sent.scrollIntoView({behavior:'smooth',block:'center'});
+      f.hidden=true;sent.hidden=false;sent.focus({preventScroll:true});sent.scrollIntoView({behavior:'smooth',block:'center'});
     }).catch(function(){
       btn.disabled=false;say('Something went wrong on our end. Please call or text (720) 495-3924.',true);
     });
