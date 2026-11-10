@@ -1,6 +1,6 @@
-/* Contact form: EmailJS. Fill in the three IDs after the EmailJS account is set up. */
+/* Contact form: EmailJS. The auto-reply to the sender is linked to the inquiry template inside EmailJS. */
 (function(){
-  var CFG={publicKey:'EMAILJS_PUBLIC_KEY',serviceId:'EMAILJS_SERVICE_ID',notifyTemplate:'EMAILJS_TEMPLATE_NOTIFY',autoReplyTemplate:'EMAILJS_TEMPLATE_AUTOREPLY'};
+  var CFG={publicKey:'XY2vmSVWCmxE5XA6u',serviceId:'service_dft',notifyTemplate:'template_inquiry'};
   var f=document.getElementById('cf'); if(!f) return;
   var st=f.querySelector('.status'), btn=f.querySelector('[type=submit]'), sent=document.getElementById('sent');
   var ready=/^[A-Za-z0-9_-]{8,}$/.test(CFG.publicKey)&&!/^EMAILJS_/.test(CFG.publicKey)&&window.emailjs;
@@ -15,10 +15,9 @@
     var sel=f.interest, interest=sel.options[sel.selectedIndex].text;
     var data={who:f.who.value,age:f.age.value,interest:interest,name:f.elements.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim()||'Not given',message:f.message.value.trim()||'(No message)'};
     emailjs.send(CFG.serviceId,CFG.notifyTemplate,data).then(function(){
-      if(CFG.autoReplyTemplate&&!/^EMAILJS_/.test(CFG.autoReplyTemplate)) emailjs.send(CFG.serviceId,CFG.autoReplyTemplate,data).catch(function(){});
       f.hidden=true;sent.hidden=false;sent.focus({preventScroll:true});sent.scrollIntoView({behavior:'smooth',block:'center'});
     }).catch(function(){
-      btn.disabled=false;say('Something went wrong on our end. Please call or text (720) 495-3924.',true);
+      btn.disabled=false;say('Something went wrong on our end. Please call or text (720) 495-3924, or email will@denverforwardtherapy.com.',true);
     });
   });
 })();
