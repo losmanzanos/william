@@ -173,6 +173,13 @@ form.f{grid-column:2/5;display:grid;grid-template-columns:repeat(3,1fr);gap:28px
 .f .ck{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink)}
 .f .ck input{width:16px;height:16px;margin-top:2px;appearance:auto;accent-color:var(--green);flex:none}
 .f .btn{justify-self:start}
+.f .btn:disabled{opacity:.6;cursor:default}
+.f .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.f .status{grid-column:1/-1;font-size:15px;color:var(--soft);min-height:1.4em;margin-top:-10px}
+.f .status.bad{color:#8a3b2e}
+.sent{grid-column:2/5;max-width:56ch;padding-top:6px}
+.sent h2{font:400 var(--s2)/1.1 var(--serif);letter-spacing:-.02em;margin-bottom:16px}
+.sent p{line-height:1.5;font-weight:400}
 
 /* footer */
 footer{overflow:hidden;background:var(--green);color:#E6EBE6;font-size:15px;padding:60px 0 0}

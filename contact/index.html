@@ -45,7 +45,7 @@
 <section class="body contact g">
   <div class="rule"></div>
   <aside class="side"><h2>Phone</h2><p><a class="line" href="tel:+17204953924">(720) 495-3924</a></p><h2>Office</h2><p>1325 S. Colorado Blvd, Suite B108<br>Denver, CO 80222<br><a class="line" href="https://www.google.com/maps/search/?api=1&amp;query=1325+S+Colorado+Blvd+Suite+B108+Denver+CO+80222" target="_blank" rel="noopener">Get directions</a></p><h2>In a crisis</h2><p>Call or text 988, or Colorado Crisis Services at <span style="white-space:nowrap">1-844-493-8255</span>. This form isn&rsquo;t monitored for emergencies.</p></aside>
-  <form class="f" action="#" method="post" aria-label="Contact form">
+  <form class="f" id="cf" action="#" method="post" aria-label="Contact form" novalidate>
     <div><label for="c-who">I am</label><select id="c-who" name="who"><option>Looking for myself</option><option>A parent or guardian</option><option>A professional referring someone</option></select></div>
     <div><label for="c-age">Age of the person seeking therapy</label><select id="c-age" name="age"><option>13 to 15</option><option>16 to 17</option><option>18 to 21</option><option>22 to 26</option><option>27 or older</option></select></div>
     <div><label for="c-what">Interested in</label><select id="c-what" name="interest"><option>Individual therapy</option><option>Family sessions</option><option>Parent coaching</option><option value="group">Substance use group waitlist</option><option>Not sure yet</option></select></div>
@@ -55,8 +55,14 @@
     <div class="full"><label for="c-msg">A short message (optional)</label><textarea id="c-msg" name="message" rows="3"></textarea></div>
     <p class="note">Email and web forms aren&rsquo;t a secure way to share health information. Please keep your message brief and leave out personal health details. You can share more on the phone call.</p>
     <label class="ck"><input type="checkbox" required> I understand and won&rsquo;t include private health details.</label>
+    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <button class="btn" type="submit">Send</button>
+    <p class="status" role="status" aria-live="polite"></p>
   </form>
+  <div class="sent" id="sent" hidden>
+    <h2>Thanks, your message is on its way.</h2>
+    <p>Will reads every message himself and will get back to you within one business day. If it&rsquo;s easier to talk now, call or text <a class="line" href="tel:+17204953924">(720) 495-3924</a>.</p>
+  </div>
 </section>
 </div>
 </main>
@@ -72,6 +78,8 @@
   <div class="big" aria-hidden="true">DENVER FORWARD</div>
   <div class="base"><span>&copy; 2026 Denver Forward Therapy</span><span>William Flug, LCSW</span></div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js" defer></script>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/form.js" defer></script>
 </body>
 </html>
